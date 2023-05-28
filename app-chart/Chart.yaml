@@ -1,0 +1,4 @@
+apiVersion: v2
+name: app-chart
+description: Study helm charts
+version: 0.1.0

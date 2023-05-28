@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-app-service
+spec:
+  selector:
+    app: {{ .Release.Name }}-m5-project
+  ports:
+    - name: {{ .Release.Name }}-backend-deployment
+      port: 3000
+      targetPort: 3000
+      protocol: TCP
+    - name: {{ .Release.Name }}-frontend-deployment
+      port: 80
+      targetPort: 80
+      protocol: TCP
+  type: ClusterIP
