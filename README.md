@@ -1,11 +1,15 @@
-Just clone repository:
+<b>1. Just clone repository:</b>
 </br>
-`git clone `
+`git clone git@github.com:nazaryanenko/m5.git`
 </br>
-and run: 
+or
+</br>
+`git clone https://github.com/nazaryanenko/m5.git`
+</br>
+<b>2. navigate to project directory</b>
+</br>
+<b>3. run:</b> 
 </br>
     `make start`
 
-<b>pess CTL + V at your browser</b>
-
-it will run minikube and returns you all info about services, deployments, pods. Also it will show minikube ip and  
+<b>pess CTL + V at your browser address line</b>
