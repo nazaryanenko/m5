@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-frontend-deployment
+  name: frontend-deployment-{{ .Release.Name }}
   labels:
-    app: {{ .Release.Name }}-frontend-deployment
+    app: frontend-deployment-{{ .Release.Name }}
     env: production
 spec:
   replicas: {{ .Values.frontend.replicaCount }}
   selector:
     matchLabels:
-      project: {{ .Release.Name }}-m5-project
+      project: m5-frontend-{{ .Release.Name }}
   template:
     metadata:
       labels:
-        project: {{ .Release.Name }}-m5-project
+        app: m5-frontend-{{ .Release.Name }}
+        project: m5-frontend-{{ .Release.Name }}
     spec:
       containers:
-        - name: {{ .Release.Name }}-frontend-container
+        - name: frontend-container-{{ .Release.Name }}
           image: {{ .Values.frontend.image }}
           ports:
             - containerPort:  {{ .Values.frontend.port }}
